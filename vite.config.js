@@ -12,5 +12,12 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    proxy: {
+      "/api": {
+        target: "https://crud-user-production-d6cc.up.railway.app",
+        changeOrigin: true,
+        secure: true,
+      },
+    },
   },
 });
